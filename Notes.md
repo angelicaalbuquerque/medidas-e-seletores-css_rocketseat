@@ -75,6 +75,52 @@ html {
 
 ### Porcentagens
 
+Em muitos casos é tratado da mesma maneira que as distâncias `<length>` e sempre será relativo a algum valor.
+
+Exemplo 1:
+
+```CSS
+html {
+  font-size: 50%;
+}
+```
+
+Nesse caso específico, temos algo que já está sendo computado pelo navegador e, então, estou fazendo 50% do valor padrão (no caso, 16px).
+
+Exemplo 2:
+
+```CSS
+li {
+  font-size: 80%;
+}
+```
+
+Em casos de listas, o estilo é aplicado em cascata, basicamente, sendo em relação ao pai. Se eu tenho uma lista com 3 elementos, o 3º elemento terá 80% em cima do 2º elemento que, por sua vez, terá 80% em cima do 1º elemento (pai).
+
+Exemplo 3:
+
+```CSS
+div {
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+}
+```
+
+Nesse caso, o elemento é aplicado na largura e altura de 100% do body. Se eu altero a largura do body, significa que estarei alterando a largura do pai dele (HTML). Sendo assim, o tamanho da largura da div será 50% do 50% do body, ou seja, a metade da metade da largura do elemento raiz.
+
+```CSS
+body {
+  width: 50%;
+}
+
+div {
+  background-color: blue;
+  width: 50%;
+  height: 100%;
+}
+```
+
 ### Position
 
 ### Funções
