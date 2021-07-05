@@ -20,6 +20,59 @@ _Unidades comuns:_<br>
 
 ### Distâncias absolutas e relativas
 
+**Distâncias absulutas (`<length>`)**<br>
+São fixas e não alteram seu valor.
+
+| Unidade | Nome               | Equivalência        |
+| ------- | ------------------ | ------------------- |
+| cm      | Centímetros        | 1cm = 96px/2.54     |
+| in      | Inches (polegadas) | 1in = 2.54cm = 96px |
+| px      | Pixels             | 1px = 1/96th of 1in |
+
+O mais comum e utilizado é o pixel, uma vez que todas as telas têm tamanhos de pixels. Por outro lado, não é recomendado utilizar cm.
+
+**Distâncias relativas**<br>
+São relativas a algum outro valor. Pode ser o elemento pai, um root ou o tamanho da tela.
+
+Como benefício, tem-se a maior adaptação aos diferentes tipos de tela.
+
+| Unidade | Relativo a                                    |
+| ------- | --------------------------------------------- |
+| em      | Tamanho da fonte do pai                       |
+| rem     | Tamanho da fonte do elemento raiz (root/html) |
+| vw      | 1% da viewport de largura (width)             |
+| vh      | 1% da viewport de altura (height)             |
+
+Tamanho da fonte do pai: <br>
+Significa que se eu tiver uma `div` com um tamanho fixo de, por exemplo, **font-size: 18px;**, e colocar um `p` com **font-size: 1em;**, vai significar que o paráfrafo terá a fonte do tamanho que foi definido da fonte do pai (18px). Agora, se eu colocar esse parágrafo com **font-size: 2em;**, ele valerá **36px** (18px \* 2).
+
+Tamanho da fonte do elemento raiz: <br>
+Caso não tenha definido o valor da `div`, será buscado o valor do elemento raiz (root) HTML, definido pelo navegador.<br>
+É possível também ir direto para o valor raiz mesmo tendo definido um valor para fonte da `div`, basta utilizar `rem`.
+
+Exemplo:
+
+```CSS
+div {
+  font-size: 32px;
+}
+
+p {
+  font-size: 1.6rem;
+}
+```
+
+Eu posso alterar o elemento root, aliás, utilizando `:root {}` ou `html {}`:
+
+```CSS
+html {
+  font-size: 14px;
+}
+```
+
+**viewport**:
+É relativo ao dispositivo, ao que está aparecendo na tela. Ao aplicar o a unidade relativa ao viewport, significa que temos 100% de largura/altura e podemos escolher quantos "%" dessa área utilizar.
+
 ### Porcentagens
 
 ### Position
