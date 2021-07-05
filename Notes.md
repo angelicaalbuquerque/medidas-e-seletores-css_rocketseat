@@ -147,6 +147,38 @@ _Teste brincar ao mudar `<background-position>` para `bottom left`, `center`, `l
 
 ### Funções
 
+Em programação, funções são reconhecidas por causar um reaproveitamento de código.
+
+Algumas funções em CSS que podemos utilizar:
+
+- rgb();
+- hsl();
+- url();
+- calc().
+
+Lembrando que, por exemplo, `rgb` é o nome da função e que, dentro dos parênteses, ela recebe valores (argumentos) que serão calculados e retornados.
+
+No exemplo abaixo, eu não sei qual é a altura que quero da imagem, mas o que eu sei é que quero que essa imagem fique sempre na metade da tela e tenha ainda mais 20px.
+
+Primeiramente, como o `body` não tem uma altura definida por padrão e vai sempre se expandir dependendo do elemento que tem dentro, precisamos definir a porcentagem:
+
+```HTML
+body {
+  height: 100vh;
+  margin: 0;
+}
+```
+
+```CSS
+.box {
+  height: calc(50% + 20%);
+  width: 100%;
+  background-image: url(http://source.unsplash.com/random);
+  background-repeat: no-repeat;
+  background-position: right 50px;
+}
+```
+
 ### Strings e identificadores
 
 ## Nem só de classes ou IDs
