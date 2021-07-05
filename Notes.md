@@ -123,6 +123,28 @@ div {
 
 ### Position
 
+`<position>` é um tipo de valor que representa um conjunto de coordenadas 2D: top, right, bottom, left e center.
+
+É utilizado para alguns tipos de propriedades e, inclusive, o valor `<position>` não deve ser confundido com a propriedade `position`.
+
+No exemplo abaixo, consigo mexer nos valores de background-position e ajustar a imagem como eu quero. Desse jeito, a ponta direita da imagem ficará no canto direito da tela e abaixado 50px do topo.
+
+```HTML
+<div class=box></div>
+```
+
+```CSS
+.box {
+  height: 300px;
+  width: 400px;
+  background-image: url(http://source.unsplash.com/random);
+  background-repeat: no-repeat;
+  background-position: right 50px;
+}
+```
+
+_Teste brincar ao mudar `<background-position>` para `bottom left`, `center`, `left top`, `bottom right` e `top left`, por exemplo._
+
 ### Funções
 
 ### Strings e identificadores
