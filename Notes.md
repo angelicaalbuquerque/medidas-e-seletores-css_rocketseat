@@ -162,14 +162,12 @@ No exemplo abaixo, eu não sei qual é a altura que quero da imagem, mas o que e
 
 Primeiramente, como o `body` não tem uma altura definida por padrão e vai sempre se expandir dependendo do elemento que tem dentro, precisamos definir a porcentagem:
 
-```HTML
+```CSS
 body {
   height: 100vh;
   margin: 0;
 }
-```
 
-```CSS
 .box {
   height: calc(50% + 20%);
   width: 100%;
@@ -180,6 +178,25 @@ body {
 ```
 
 ### Strings e identificadores
+
+As `strings` são textos envoltos de aspas, enquanto os identificadores são, por exemplo, `red`, `black` e `blue` para rotular cores.
+
+No caso abaixo, a frase "Aqui vem alguma mensagem" aparece na cor branca sobre a imagem.
+
+```CSS
+.box {
+  height: 300px;
+  width: 400px;
+  background-image: url(http://source.unsplash.com/random);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+.box::after {
+  content: "Aqui vem alguma mensagem";
+  color: white;
+}
+```
 
 ## Nem só de classes ou IDs
 
