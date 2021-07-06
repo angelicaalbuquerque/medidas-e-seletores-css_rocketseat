@@ -204,6 +204,103 @@ No caso abaixo, a frase "Aqui vem alguma mensagem" aparece na cor branca sobre a
 
 #### Seletores
 
+Os seletores conectam um elemento HTML com o CSS a fim de alterar esse elemento.
+
+**Tipos de seletores**:
+
+- Element selector
+
+  - Envolve todos os elementos HTML
+
+  ```html
+  <h1>Título da página</h1>
+  <p>Subtítulo</p>
+  ```
+
+  ```CSS
+  h1 {
+    color: yellow;
+  }
+
+  p {
+    color: pink;
+  }
+  ```
+
+- ID Selector
+
+  - Um elemento que tenha um atributo `id`;
+  - Cada `id` deverá ser único
+
+  ```html
+  <h1 id="titulo">Título da página</h1>
+  <p id="subtitulo">Subtítulo</p>
+  ```
+
+  ```CSS
+  #titulo {
+    color: red;
+  }
+
+  #subtitulo {
+    color: green;
+  }
+  ```
+
+- Class Selector
+
+  - Os elementos que contenham um atributo `class`;
+  - Podemos ter uma ou mais classes
+
+  ```html
+  <h1 class="red">Título da página</h1>
+  <p class="red">Conteúdo</p>
+  ```
+
+  ```CSS
+  .red {
+    color: red;
+  }
+  ```
+
+- Attribute Selector
+
+  - Um elemento que tenha um atributo específico.
+
+  ```html
+  <h1 title="algum título">Título da página</h1>
+  ```
+
+  ```CSS
+  [title] {
+    color: red;
+  }
+  ```
+
+- Pseudo-class Selector
+
+  - Elementos que possuem um estado específico.
+
+  ```html
+  <h1>Título da página</h1>
+  ```
+
+  ```CSS
+  h1:hover {
+    color: orange;
+  }
+  ```
+
+  **Múltiplos elementos**
+
+É possível selecionar múltipos elementos e aplicar alguma regra CSS para todos eles, separando-os por vírgulas.
+
+```CSS
+h1, a:hover, .red {
+  color: red;
+}
+```
+
 #### Combinators
 
 #### Child combinator
