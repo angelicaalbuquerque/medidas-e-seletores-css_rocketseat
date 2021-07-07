@@ -303,7 +303,38 @@ h1, a:hover, .red {
 
 #### Combinators
 
+Combinadores trabalham para buscar e combinar seletores com o propósito de aplicar uma estilização.
+
+**Descedant combinator**
+
+É identificado por um espaço entre os seletores. Busca um elemento dentro do outro.
+
+```CSS
+body article h2 {
+  color: red;
+}
+/* procura dentro do body alguma tag article que tenha h2 e aplica a cor vermelha */
+```
+
+No caso acima, a cor vermelha será aplicada para todos os elementos `h2` que tiverem dentro de um `article` que, por sua vez, estiver dentro de `body`, mesmo que haja outro elemento ao meio, como no caso:
+
+```HTML
+<body>
+  <div>
+    <article>
+      <p>
+        <h2>Título</h2>
+      </p>
+    </article>
+  </div>
+</body>
+```
+
+Nesses casos, daria no mesmo pro CSS procurar `body h2` ou somente `h2` na página inteira.
+
 #### Child combinator
+
+Identificado pelo sinal `>` entre dois seletores. Ele seleciona somente o elemento que é **filho direto do pai**; os elementos depois do filho direto serão desconsiderados.
 
 #### Sibling Combinator
 
