@@ -334,7 +334,45 @@ Nesses casos, daria no mesmo pro CSS procurar `body h2` ou somente `h2` na pági
 
 #### Child combinator
 
-Identificado pelo sinal `>` entre dois seletores. Ele seleciona somente o elemento que é **filho direto do pai**; os elementos depois do filho direto serão desconsiderados.
+Deixa a busca por combinação um pouco mais específica.
+
+Identificado pelo sinal `>` entre dois seletores, ele seleciona **somente** o elemento que é **filho direto do pai**; os elementos depois do filho direto serão desconsiderados.
+
+```CSS
+body > ul > li
+```
+
+No caso abaixo, todos os `ul > li` que estiverem dentro de body terão a cor azul aplicada.
+
+```HTML
+<body>
+<ul>
+  <li>Item 1</li>
+
+  <ul>
+    <li>Item 1.1</li>
+  </ul>
+</ul>
+</body>
+```
+
+```CSS
+body ul li {
+  color: blue;
+}
+```
+
+Mas, ao alterar o CSS para uma busca mais específica, eu altero somente o `Item 1` e não `Item 1.1` com a cor azul, ou seja, o filho direto, somente o primeiro.
+
+```CSS
+body > ul > li {
+  color: blue;
+}
+```
+
+Agora, se eu envolvo tudo isso em uma `div`, mesmo que ela esteja dentro de `body`, o estilo não é aplicado porque a especifidade foi tanta que ele precisaria da informação da existência dessa `div` antes de `ul > li`.
+
+Caso eu retire o `body` do estilo, aí sim funciona a aplicação para todos os `ul > li`.
 
 #### Sibling Combinator
 
