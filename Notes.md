@@ -432,6 +432,32 @@ Já nesse caso, ambos os irmãos terão a cor laranja aplicada, já que todos os
 
 #### Utilizando combinators
 
+Agora, podemos utilizar os combinadores de diversas maneiras. Por exemplo, pegar todos os `li` diretos de `ul` que tenham a classe `.red`:
+
+```HTML
+<ul>
+  <li>Item 1</li>
+  <li class="red">Item 2</li>
+</ul>
+```
+
+```CSS
+ul > li[class="red"] {
+  color: red;
+}
+```
+
+**Dica**:<br>
+Seletores muito específicos tendem a causar dificuldades no reuso das regras de estilização dos elementos. Muitas vezes, um simples uso de classes torna o trabalho muito mais eficiente.
+
+Então, no caso acima, poderia simplesmente fazer assim, facilitando a reutilização do estilo:
+
+```CSS
+.red {
+  color: red;
+}
+```
+
 ### Pseudo-classes
 
 #### Pseudo-classes
