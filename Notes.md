@@ -71,7 +71,7 @@ html {
 ```
 
 **viewport**:
-É relativo ao dispositivo, ao que está aparecendo na tela. Ao aplicar o a unidade relativa ao viewport, significa que temos 100% de largura/altura e podemos escolher quantos "%" dessa área utilizar.
+É relativo ao dispositivo, ao que está aparecendo na tela. Aplicar a unidade relativa ao viewport significa que temos 100% de largura/altura e podemos escolher quantos "%" dessa área utilizar.
 
 ### Porcentagens
 
@@ -374,7 +374,61 @@ Agora, se eu envolvo tudo isso em uma `div`, mesmo que ela esteja dentro de `bod
 
 Caso eu retire o `body` do estilo, aí sim funciona a aplicação para todos os `ul > li`.
 
-#### Sibling Combinator
+Para eu aplicar o estilo em `Item 1.1` e não no `Item 1`, devo especificar dessa forma:
+
+```HTML
+<body>
+<ul>
+  <li>Item 1</li>
+
+  <ul>
+    <li>Item 1.1</li>
+  </ul>
+</ul>
+</body>
+```
+
+```CSS
+ul > ul > li {
+  color: blue;
+}
+```
+
+#### Adjacent Sibling Combinator
+
+É identificado pelo sinal `+` entre dois seletores; seleciona **somente** o elemento do **lado direito** que é **irmão direto** na hierarquia. Ou seja, combinador irmão adjacente.
+
+```HTML
+<h1>Título</h1>
+<p>Parágrafo</p>
+<p>Outro paragráfo</p>
+```
+
+```CSS
+h1 + p {
+  color: orange;
+}
+```
+
+No exemplo acima, juntamento ao `h1` temos um irmão e depois outro irmão. Porém, esse `+` vai pegar apenas o "primeiro irmão", o irmão direto, ou seja, apenas o primeiro parágrafo.
+
+#### General Sibling Combinator
+
+Identificado pelo sinal `~` entre dois seletores; seleciona todos os elementos irmãos.
+
+```HTML
+<h1>Título</h1>
+<p>Parágrafo</p>
+<p>Outro paragráfo</p>
+```
+
+```CSS
+h1 ~ p {
+  color: orange;
+}
+```
+
+Já nesse caso, ambos os irmãos terão a cor laranja aplicada, já que todos os elementos irmãos que estiverem ao lado do `h1` serão selecionados.
 
 #### Utilizando combinators
 
