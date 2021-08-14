@@ -550,6 +550,70 @@ article p:nth-child(2) {
 
 #### nth-child odd e even
 
+Para eu fazer uma estilização intercalada, por exemplo, cor no elemento 1 e no elemento 3 de uma lista com 4 elementos no total, posso utilizar o `:nth-child(odd)`.
+
+Utilizando `odd`, eu selecione os números ímpares. Já `even`, significa selecionar os números pares.
+
+Com item sim/item não na cor cinza:
+
+```HTML
+<ul>
+  <li>São Paulo</li>
+  <li>Rio de Janeiro</li>
+  <li>Minas Gerais</li>
+  <li>Rio Grande do Norte</li>
+</ul>
+```
+
+```CSS
+ul li:nth-child(odd) {
+  color: gray;
+  }
+```
+
+Com item não/item sim na cor laranja:
+
+```HTML
+<ul>
+  <li>São Paulo</li>
+  <li>Rio de Janeiro</li>
+  <li>Minas Gerais</li>
+  <li>Rio Grande do Norte</li>
+</ul>
+```
+
+```CSS
+ul li:nth-child(even) {
+  color: orange;
+  }
+```
+
+Aplicando ambos:
+
+```HTML
+<ul>
+  <li>São Paulo</li>
+  <li>Rio de Janeiro</li>
+  <li>Minas Gerais</li>
+  <li>Rio Grande do Norte</li>
+  <li>Espírito Santo</li>
+  <li>Bahia</li>
+  <li>Manaus</li>
+  <li>Brasília</li>
+</ul>
+```
+
+```CSS
+ul li:nth-child(odd) {
+  color: black;
+  background: #eee;
+}
+
+ul li:nth-child(even) {
+  color: brown;
+}
+```
+
 #### hover e focus
 
 #### disabled e required
