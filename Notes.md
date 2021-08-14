@@ -616,6 +616,34 @@ ul li:nth-child(even) {
 
 #### hover e focus
 
+`:hover` e `:focus` estão ligados às ações do usuário. Sendo o `:hover` a ação do mouse sobre algum elemento (geralmente, links) e o `:focus` para campos de texto (input).
+
+**Hover**:
+
+```HTML
+<a href="#"> Clique aqui</a>
+```
+
+```CSS
+a:hover {
+  font-weight: bold;
+  color: red;
+}
+```
+
+**Focus**:
+
+```HTML
+<input type="text">
+```
+
+```CSS
+input:focus {
+  border-color: red;
+  outline: none; //retirado apenas para ver melhor o uso do focus
+}
+```
+
 #### disabled e required
 
 #### Como conseguir ajuda
