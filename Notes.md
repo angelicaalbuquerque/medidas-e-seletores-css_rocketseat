@@ -646,6 +646,95 @@ input:focus {
 
 #### disabled e required
 
+Podemos usar atributos, como `disabled` para desabilitar um campo e `required` para informar que ele é obrigatório.
+
+```HTML
+<input type="text" required>
+```
+
+```CSS
+input:required {
+  background-color: red;
+  outline: green;
+}
+```
+
 #### Como conseguir ajuda
 
+A referência para entender melhor pseudo-classes está na documentação da Mozilla.
+
+Ver mais [aqui](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes).
+
 ### Pseudo-elements
+
+Com os pseudo-elements, é possível adicionar elementos HTML pelo próprio CSS. Sua escrita é semelhante com a dos pseudo-classes, porém são colocados dois pontos em vez de um: `::pseudo-element-name`.
+
+Exemplos mais utilizados:
+
+- ::before
+- ::after
+- ::first-line
+
+Ver mais referências [aqui](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-elements).
+
+Utilizando os elementos em uma lista:
+
+```HTML
+  <li>Uva</li>
+  <li>Maçã</li>
+  <li>Kiwi</li>
+```
+
+```CSS
+li::before {
+  content: " > "
+}
+
+li::after {
+  content: ";"
+}
+```
+
+**Importante**: sempre que eu utilizar `::before` e `::after`, preciso sempre utilizar `content`, mesmo que ele seja vazio para que eu possa fazer outro tipo de estilização. Como, por exemplo, uma linha separadora.
+
+```CSS
+li {
+  position: relative;
+}
+
+li::after {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: blue;
+  position: absolute;
+  bottom: 0px;
+}
+```
+
+Já o pseudo-element `:first-line` pega a primeira linha de algum conteúdo, seja texto ou não.
+
+```HTML
+<article>
+  <h3>HTML</h3>
+  <p>HTML abreviação para a expressão inglesa HyperText Markup Language, que significa: "Linguagem de Marcação de Hipertexto" é uma linguagem de marcação utilizada na construção de páginas na Web.</p>
+  <p>Documentos HTML podem ser interpretados por navegadores.Documentos HTML podem ser interpretados por navegadores.</p>
+  <p>A tecnologia é fruto da junção entre os padrões HyTime e SGML. A tecnologia é fruto da junção entre os padrões HyTime e SGML. A tecnologia é fruto da junção entre os padrões HyTime e SGML. A tecnologia é fruto da junção entre os padrões HyTime e SGML.</p>
+</article>
+```
+
+```CSS
+article p::first-line {
+  font-weight: bold;
+  color: blue;
+}
+```
+
+Posso fazer com que só, por exemplo, o segundo parágrafo receba essa estilização. Para isso, misturo pseudo-classes com pseudo-element:
+
+```CSS
+article p:nth-of-type(2)::first-line {
+  font-weight: bold;
+  color: blue;
+}
+```
