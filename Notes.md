@@ -462,7 +462,54 @@ Então, no caso acima, poderia simplesmente fazer assim, facilitando a reutiliza
 
 #### Pseudo-classes
 
+É um **tipo de seletor** que irá selecionar um elemento que estiver em um estado específico.
+
+Exemplificando, é o primeiro elemento dentro de uma caixa ou o elemento está com o ponteiro do mouse em cima dele.
+
+As pseudo-classes começam com 2 pontos seguidos do nome da pseudo class e sempre serão utilizadas no seletor (algum seletor prévio): `:pseudo-class-name`
+
 #### first-child
+
+Para selecionar o primeiro filho de um grupo de elementos, utilizamos: `:first-child`
+
+No exemplo abaixo, tenho 3 elementos dentro de uma lista.
+
+```HTML
+<ul>
+  <li>Feijão</li>
+  <li>Arroz</li>
+  <li>Batata</li>
+</ul>
+```
+
+Para que eu selecione o primeiro elemento para que apenas ele tenha o estilo aplicado, posso fazer deste modo:
+
+```CSS
+ul li:first-child {
+  font-weight: bold;
+  color: blue;
+}
+```
+
+Importante: caso eu tenha, por exemplo, um `h3` dentro do `ul`, essa regra do `:first-child` para `li` não vai funcionar. O que acontece é que o CSS segue a regra de que, dentro da caixa `ul`, o primeiro filho é o `h3`, o segundo o primeiro `li` e assim por diante.
+
+```HTML
+<ul>
+  <h3>Comidas</h3>
+  <li>Feijão</li>
+  <li>Arroz</li>
+  <li>Batata</li>
+</ul>
+```
+
+Então, não existe `li` como primeiro, no caso abaixo. Entretanto, como `h3` é o primeiro filho, essa regra pode ser aplicada a ele:
+
+```CSS
+ul h3:first-child {
+  font-weight: bold;
+  color: blue;
+}
+```
 
 #### nth-of-type
 
