@@ -513,7 +513,40 @@ ul h3:first-child {
 
 #### nth-of-type
 
+Uma estratégia para pegar o segundo elemento, ou seja, o primeiro parágrafo, seria utilizar `:nth-of-type()`, que quer dizer: "pegue, dos tipos de `p` que existem dentro de `article`, o elemento que eu quero."
+
+```HTML
+<article>
+  <h3>HTML</h3>
+  <p>HTML abreviação para a expressão inglesa HyperText Markup Language, que significa: "Linguagem de Marcação de Hipertexto" é uma linguagem de marcação utilizada na construção de páginas na Web.</p>
+  <p>Documentos HTML podem ser interpretados por navegadores.</p>
+  <p>A tecnologia é fruto da junção entre os padrões HyTime e SGML.</p>
+</article>
+```
+
+```CSS
+article p:nth-of-type(1) {
+  font-weight: bold;
+  color: blue;
+}
+```
+
+Ou seja, com o `:nth-of-type()`, posso selecionar qualquer elemento, basta selecioná-lo dentro dos parenteses.
+
 #### nth-child
+
+Utilizando agora `:nth-of-type()`, eu conto os filhos do `article`.
+
+Lembrando que como `h3` é o primeiro filho, utilizar `p:nth-of-type(1)` não irá funcionar. Os `p`'s são contados a partir de 2, pelo primeiro parágrafo ser o segundo elemento da lista.
+
+Logo, com o código abaixo, consigo selecionar o primeiro parágrafo e não necessariamente o primeiro filho direto:
+
+```CSS
+article p:nth-child(2) {
+  font-weight: bold;
+  color: blue;
+}
+```
 
 #### nth-child odd e even
 
